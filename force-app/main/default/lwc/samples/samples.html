@@ -1,0 +1,33 @@
+<template>
+    <section class="slds-grid slds-wrap slds-gutters grid-gap">
+        <div class="slds-col slds-size_1-of-1">
+            <lightning-card title="Types">
+                <div class="slds-var-p-horizontal_medium slds-var-p-vertical_small">
+                    <h3 class="slds-text-title_bold">Sample</h3>
+
+                    <c-lwc-trial-bar message="days left in trial." remaining-days="4" button-label="Upgrade Now">
+                    </c-lwc-trial-bar>
+
+                    <h3 class="slds-text-title_bold slds-var-m-top_medium">Custom action on the button</h3>
+                    <c-lwc-trial-bar message="days left in trial." button-label="Show toast"
+                        button-action={buttonAction}></c-lwc-trial-bar>
+
+                    <h3 class="slds-text-title_bold slds-var-m-top_medium">Capture <code>successclick</code> event</h3>
+                    <c-lwc-trial-bar onsuccessclick={handleSuccessClick} message="days left in trial."
+                        remaining-days="14" button-label="No action"></c-lwc-trial-bar>
+
+                    <h3 class="slds-text-title_bold slds-var-m-top_medium">Slot content</h3>
+                    <c-lwc-trial-bar>
+                        <div class="slds-align_absolute-center">This is a slot content! </div>
+                    </c-lwc-trial-bar>
+
+                    <h3 class="slds-text-title_bold slds-var-m-top_medium">License Info wrapper component</h3>
+
+                    <c-lwc-trial-bar-license-info button-link="mailto:hello@pipelaunch.com"
+                        package-license-info={packageLicenseInfo} minimum-days-trial=3 minimum-days-licensed=30>
+                    </c-lwc-trial-bar-license-info>
+                </div>
+            </lightning-card>
+        </div>
+    </section>
+</template>
