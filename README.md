@@ -26,6 +26,7 @@ Everything was developed in a single LWC, so you just need a new single componen
 <c-lwc-trial-bar
 ```
 - See the component `lwcTrialBarLicenseInfo` to see a wrapper example how to use with license management
+- This component uses custom labels. Copy also the content of the custom labels
 
 ### Testing and learn how to use it
 

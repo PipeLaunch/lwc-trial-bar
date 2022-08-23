@@ -2,7 +2,7 @@
  * @description       : Sample usage of the custom component
  * @group             : LWC Generic Components
  * @author            : samuel@pipelaunch.com
- * @last modified on  : 22-08-2022
+ * @last modified on  : 23-08-2022
  * @last modified by  : samuel@pipelaunch.com
 **/
 import { LightningElement } from "lwc";
