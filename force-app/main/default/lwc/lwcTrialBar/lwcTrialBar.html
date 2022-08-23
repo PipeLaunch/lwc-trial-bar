@@ -2,7 +2,7 @@
     <div class="slds-trial-header slds-grid">
         <template if:false={status.hasSlot}>
             <div class="slds-grid slds-grid_vertical-align-center">
-                <span class="slds-box slds-box_xx-small slds-theme_default slds-text-align_center custom-number-width">{remainingDays}</span>
+                <span if:false={hideRemainingDays} class="slds-box slds-box_xx-small slds-theme_default slds-text-align_center custom-number-width">{remainingDays}</span>
                 <span class="slds-var-m-horizontal_x-small">{message}</span>
             </div>
 

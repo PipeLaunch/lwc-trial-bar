@@ -1,8 +1,8 @@
 /**
  * @description       : SLDS Trial Bar
- * @group             : LWC Generic Components
+ * @group             : Generic Components
  * @author            : samuel@pipelaunch.com
- * @last modified on  : 22-08-2022
+ * @last modified on  : 23-08-2022
  * @last modified by  : samuel@pipelaunch.com
  * @changelog         : 25-07-2022 - Initial version
  **/
@@ -12,6 +12,7 @@ import * as utils from "./lwcTrialBarUtils";
 
 export default class LwcTrialBar extends LightningElement {
   @api debug = false; // debug mode
+  @api hideRemainingDays = false; // hide remaining days indicator
   @api buttonAction = null; // function
 
   @api buttonLink = null;
