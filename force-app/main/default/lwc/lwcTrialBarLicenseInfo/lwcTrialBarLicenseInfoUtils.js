@@ -5,21 +5,32 @@
  * @param {Object} data
  * @returns {Boolean} true to show
  */
-export function computeShowBar(data, minimumDaysTrial, minimumDaysLicensed) {
+ export function computeShowBar(data, minimumDaysTrial, minimumDaysLicensed) {
+  if (
+    data.RemainingDays === 0 &&
+    data.Status === "Active" &&
+    !Object.prototype.hasOwnProperty.call(data, "ExpirationDate")
+  ) {
+    return false; // for site license
+  }
+
   if (
     !Object.prototype.hasOwnProperty.call(data, "RemainingDays") ||
     isNaN(data.RemainingDays)
-  )
+  ) {
     return false;
+  }
 
-  if (data.Status === "Trial" && data.RemainingDays <= minimumDaysTrial)
+  if (data.Status === "Trial" && data.RemainingDays <= minimumDaysTrial) {
     return true;
+  }
 
   if (
     (data.Status === "Active" || data.Status === "Expired") &&
     data.RemainingDays <= minimumDaysLicensed
-  )
+  ) {
     return true;
+  }
 
   return false;
 }
@@ -29,7 +40,7 @@ export function computeShowBar(data, minimumDaysTrial, minimumDaysLicensed) {
  * @param {Object} input
  * @returns {Boolean}
  */
- export function validatePackageLicenseInfo(input) {
+export function validatePackageLicenseInfo(input) {
   return (
     input &&
     Object.prototype.hasOwnProperty.call(input, "Status") &&
@@ -39,7 +50,7 @@ export function computeShowBar(data, minimumDaysTrial, minimumDaysLicensed) {
 
 /**
  * @description validates positive number
- * @param {*} input 
+ * @param {*} input
  * @returns {Number}
  */
 export function validateNumber(input) {
