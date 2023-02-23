@@ -2,25 +2,54 @@
  * @description       : SLDS Trial Bar
  * @group             : Generic Components
  * @author            : samuel@pipelaunch.com
- * @last modified on  : 23-08-2022
+ * @last modified on  : 2023-02-23
  * @last modified by  : samuel@pipelaunch.com
  * @changelog         : 25-07-2022 - Initial version
+ *                      23-02-2023 - add mainClass property
  **/
 import { LightningElement, api, track } from "lwc";
 
 import * as utils from "./lwcTrialBarUtils";
 
 export default class LwcTrialBar extends LightningElement {
-  @api debug = false; // debug mode
-  @api hideRemainingDays = false; // hide remaining days indicator
-  @api buttonAction = null; // function
+  /**
+   * @property {string} mainClass CSS classes for the main element.
+   */
+  @api mainClass = "";
 
+  /**
+   * @property {boolean} hideRemainingDays hide remaining days indicator
+   * @default false
+   */
+  @api hideRemainingDays = false;
+
+  /**
+   * @property {function} buttonAction function to execute when user clicks on the button
+   */
+  @api buttonAction = null;
+
+  /**
+   * @property {string} buttonLink link to follow when user clicks on the button
+   * @example mailto:hello@pipelaunch.com
+   */
   @api buttonLink = null;
 
-  @api message = ""; // message after the number of days
+  /**
+   * @property {string} message message after the number of days
+   * @example "left in your trial"
+   */
+  @api message = "";
+
+  /**
+   * @property {string} buttonLabel label for the button
+   * @example "Contact us"
+   */
   @api buttonLabel = "";
 
-  @api remainingDays = 0; // number
+  /**
+   * @property {number} remainingDays number of days left in the trial
+   */
+  @api remainingDays = 0;
 
   @track status = {
     hasSlot: false, // primitive types had issues with rerender, use tracked variable
@@ -58,7 +87,7 @@ export default class LwcTrialBar extends LightningElement {
   handleSlotChange(evt) {
     this.status.hasSlot = utils.hasSlotContent(evt);
   }
-  
+
   /**
    * @description dispatch an event to the parent
    * @param {String} eventName
