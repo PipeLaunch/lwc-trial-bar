@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <labels>
+        <fullName>UPGRADE_NOW</fullName>
+        <categories>lwcTrialBar</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Upgrade Now (Button to display on trial bar)</shortDescription>
+        <value>Upgrade Now</value>
+    </labels>
+    <labels>
+        <fullName>RENEW_NOW</fullName>
+        <categories>lwcTrialBar</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Renew Now (Button to display on trial bar)</shortDescription>
+        <value>Renew Now</value>
+    </labels>
+    <labels>
+        <fullName>DAYS_LEFT_TRIAL</fullName>
+        <categories>lwcTrialBar</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>n days left in trial (display on trial bar)</shortDescription>
+        <value>days left in trial.</value>
+    </labels>
+    <labels>
+        <fullName>DAYS_LEFT_PLAN</fullName>
+        <categories>lwcTrialBar</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>n days left on your plan (display on trial bar)</shortDescription>
+        <value>days left on your plan.</value>
+    </labels>
+</CustomLabels>

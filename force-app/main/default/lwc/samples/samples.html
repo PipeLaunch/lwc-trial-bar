@@ -17,12 +17,15 @@
                         remaining-days="14" button-label="No action"></c-lwc-trial-bar>
 
                     <h3 class="slds-text-title_bold slds-var-m-top_medium">Slot content</h3>
-                    <c-lwc-trial-bar>
-                        <div class="slds-align_absolute-center">This is a slot content! </div>
+                    <c-lwc-trial-bar main-class="slds-var-m-bottom_large">
+                        <div class="slds-align_absolute-center">
+                            <lightning-icon variant="inverse" size="small" icon-name="utility:emoji"
+                                alternative-text="Info"></lightning-icon>
+                            <span class="slds-var-p-left_x-small">This is a slot content!</span>
+                        </div>
                     </c-lwc-trial-bar>
 
                     <h3 class="slds-text-title_bold slds-var-m-top_medium">License Info wrapper component</h3>
-
                     <c-lwc-trial-bar-license-info button-link="mailto:hello@pipelaunch.com"
                         package-license-info={packageLicenseInfo} minimum-days-trial=3 minimum-days-licensed=30>
                     </c-lwc-trial-bar-license-info>

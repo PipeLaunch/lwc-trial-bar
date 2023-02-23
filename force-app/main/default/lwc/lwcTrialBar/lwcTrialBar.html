@@ -1,17 +1,20 @@
 <template>
-    <div class="slds-trial-header slds-grid">
-        <template if:false={status.hasSlot}>
-            <div class="slds-grid slds-grid_vertical-align-center">
-                <span class="slds-box slds-box_xx-small slds-theme_default slds-text-align_center custom-number-width">{remainingDays}</span>
-                <span class="slds-var-m-horizontal_x-small">{message}</span>
-            </div>
+    <main class={mainClass}>
+        <div class="slds-trial-header slds-grid">
+            <template if:false={status.hasSlot}>
+                <div class="slds-grid slds-grid_vertical-align-center">
+                    <span if:false={hideRemainingDays}
+                        class="slds-box slds-box_xx-small slds-theme_default slds-text-align_center custom-number-width">{remainingDays}</span>
+                    <span class="slds-var-m-horizontal_x-small">{message}</span>
+                </div>
 
-            <div class="slds-grid slds-grid_vertical-align-center slds-col_bump-left">
-                <a href={buttonLink} onclick={handleClickButton}
-                    class="slds-button slds-button_success">{buttonLabel}</a>
-            </div>
-        </template>
+                <div class="slds-grid slds-grid_vertical-align-center slds-col_bump-left">
+                    <a href={buttonLink} onclick={handleClickButton}
+                        class="slds-button slds-button_success">{buttonLabel}</a>
+                </div>
+            </template>
 
-        <slot onslotchange={handleSlotChange}></slot>
-    </div>
+            <slot onslotchange={handleSlotChange}></slot>
+        </div>
+    </main>
 </template>
