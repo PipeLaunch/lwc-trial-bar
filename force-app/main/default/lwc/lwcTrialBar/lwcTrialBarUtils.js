@@ -30,7 +30,7 @@ export function validateString(value = "") {
  */
 export function hasSlotContent(evt) {
   const slot = evt.target !== undefined ? evt.target : evt.currentTarget;
-  const hasSlotContent =
+  const checkSlotContent =
     slot && (slot.innerText || slot.assignedElements().length > 0);
-  return hasSlotContent;
+  return checkSlotContent;
 }
